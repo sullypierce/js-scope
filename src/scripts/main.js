@@ -31,24 +31,45 @@
 
 
 //SIMON SAYS
-const locations = [[1, 1], [1, 2], [1, 3], [2, 1], [2, 2], [2, 3]]
-let invNum = 0;
-for (let k = 0; k < locations.length; k++) {
-    const currentLocation = locations[k]
-    const invalidLocation = false;
-    if (currentLocation[0] > 2) {
-        invalidLocation = true
+// const locations = [[1, 1], [1, 2], [1, 3], [2, 1], [2, 2], [2, 3]]
+// let invNum = 0;
+// for (let k = 0; k < locations.length; k++) {
+//     const currentLocation = locations[k]
+//     const invalidLocation = false;
+//     if (currentLocation[0] > 2) {
+//         invalidLocation = true
+//     }
+
+//     if (invalidLocation) {
+//         console.log("This location is invalid")
+//         invNum ++;
+//     }
+// }
+
+// /*
+//     Since k is used as the loop counter, it will be the
+//     total number of locations, not the invalid ones. You
+//     need to fix this somehow.
+// */
+// console.log(`There were ${invNum} invalid locations`)
+
+
+
+//LAMBDA LLAMA CHALLENGE!!
+
+
+const llamaNamer = function () {
+    const possibleNames = ["Larry", "Leon", "Leona", "Les", "Laura", "Lemony", "Lars", "Lekisha"]
+    const randomizer = Math.floor(Math.random() * 7)
+
+    const namer = function () {
+        const suffix = " the Llama "
+        const name = possibleNames[randomizer]
+        return suffix + name;
     }
 
-    if (invalidLocation) {
-        console.log("This location is invalid")
-        invNum ++;
-    }
+    return namer
 }
 
-/*
-    Since k is used as the loop counter, it will be the
-    total number of locations, not the invalid ones. You
-    need to fix this somehow.
-*/
-console.log(`There were ${invNum} invalid locations`)
+nameMaker = llamaNamer()
+console.log(nameMaker())
